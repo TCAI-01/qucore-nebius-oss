@@ -425,7 +425,7 @@ export default function App() {
               />
               <span
                 className="oss-sticker"
-                title="Open source (Apache-2.0)"
+                title="Open source (AGPL-3.0)"
                 aria-label="Open source"
               >
                 OSS

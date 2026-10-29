@@ -8,7 +8,8 @@
 **QuCoRe uses Nebius models (NVIDIA Nemotron on Token Factory), the Nebius sandbox and Tavily to review, design, fix
 and secure your code — and to help you create production-grade code files.**
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
+[![Demo video: YouTube](https://img.shields.io/badge/Demo%20video-YouTube-red)](https://www.youtube.com/watch?v=<VIDEO_ID>)
 ![Models: NVIDIA Nemotron](https://img.shields.io/badge/models-NVIDIA%20Nemotron-76b900)
 ![Inference: Nebius Token Factory](https://img.shields.io/badge/inference-Nebius%20Token%20Factory-38bdf8)
 ![Search: Tavily](https://img.shields.io/badge/search-Tavily-8b5cf6)
@@ -16,11 +17,11 @@ and secure your code — and to help you create production-grade code files.**
 ![Self-hosted](https://img.shields.io/badge/runs-locally%20%7C%20Docker-555)
 
 [**Live demo**](#hosted-demo) · [**Install locally**](#quick-start-local) · [**Run in Docker**](#quick-start-docker) · [**Hosted vs open source**](#hosted-edition-vs-this-open-source-edition) ·
-[**Try it in 5 minutes**](#try-it-in-5-minutes) · [**Nemotron & Nebius**](#how-nvidia-nemotron-is-used) · [**Roadmap**](#roadmap)
+[**Try it in 5 minutes**](#try-it-in-5-minutes) · [**Nemotron & Nebius**](#how-nvidia-nemotron-is-used)
 
-**🌐 Live demo:** `https://<your-demo-url>` &nbsp;·&nbsp; **🎬 Demo video:** `https://<your-video-url>`
+**🌐 Live demo:** `https://<your-demo-url>` &nbsp;·&nbsp; **🎬 Demo video:** [https://www.youtube.com/watch?v=<VIDEO_ID>](https://www.youtube.com/watch?v=<VIDEO_ID>) <!-- replace <VIDEO_ID> with the YouTube demo video -->
 
-Built by **ThatAICompany** under the leadership of **Akshay M** for the **Nebius × NVIDIA Global AI Hackathon**.
+Built by **That AI Company** under the leadership of **Akshay M** for the **Nebius × NVIDIA Global AI Hackathon**.
 Powered by **Nebius**, **NVIDIA** and **Tavily**.
 
 <img src="docs/assets/tour.gif" alt="QuCoRe tour: QuReview, QuCoder, QuBot, QuScan" width="900" />
@@ -73,7 +74,7 @@ in the **cost & token dashboard**.
   [Self-host on a server](#self-host-on-a-server)
 - [Try it in 5 minutes](#try-it-in-5-minutes) · [Configuration](#configuration) · [Credentials](#credentials-screen) ·
   [Data, privacy and automatic deletion](#data-privacy-and-automatic-deletion)
-- [Project structure](#project-structure) · [Troubleshooting](#troubleshooting) · [Roadmap](#roadmap) ·
+- [Project structure](#project-structure) · [Troubleshooting](#troubleshooting) · [Copyright & enterprise](#copyright-intellectual-property-and-enterprise) ·
   [Contributing](#contributing) · [License](#license)
 
 ---
@@ -93,7 +94,7 @@ asks "where does a request get authenticated?" and lands on the exact lines (QuB
 Tavily key for QuScan). There are no seats or bundled credits to buy; pick Nemotron Nano for quick questions and Ultra
 for deep reviews, and the dashboard prices every run.
 
-**4. Open source and private by default.** Apache-2.0, runs on your machine or your server, stores everything
+**4. Open source and private by default.** AGPL-3.0, runs on your machine or your server, stores everything
 locally (SQLite, ChromaDB, files), and can delete its local files automatically after N days.
 
 **5. Trustworthy output.** Arithmetic is done by code, not by the model: QuSolids scores, QuScan version-range checks,
@@ -108,7 +109,7 @@ dropped; diagram syntax is generated deterministically from validated JSON.
 | Flow maps and UML from code | — | — | — | **Yes (QuFlow)** |
 | Code Q&A with file + line citations | chat | — | — | **Yes (QuBot)** |
 | Dependency CVE + threat news with safe versions | — | some | — | **Yes (QuScan)** |
-| Open source, self-hosted, bring your own key | varies | varies | varies | **Yes (Apache-2.0, Nebius + Tavily keys)** |
+| Open source, self-hosted, bring your own key | varies | varies | varies | **Yes (AGPL-3.0, Nebius + Tavily keys)** |
 
 *Categories, not specific products; capabilities of individual products vary and change. QuCoRe is complementary to
 your editor assistant — use both.*
@@ -125,7 +126,7 @@ your editor assistant — use both.*
 | **QuBot — ask the codebase** | **Credentials — bring your own Nebius and Tavily keys** |
 | <img src="docs/assets/qubot.png" alt="QuBot" /> | <img src="docs/assets/credentials.gif" alt="Credentials" /> |
 
-<sub>Recorded from the real UI. Model output is shown in the demo video: `https://<your-video-url>`.</sub>
+<sub>Recorded from the real UI. Model output is shown in the demo video: [YouTube](https://www.youtube.com/watch?v=<VIDEO_ID>).</sub>
 
 ---
 
@@ -530,7 +531,7 @@ QUCORE_SANDBOX_NODE_IMAGE='node:22-slim'
 
 ```
 qucore-oss/
-├── README.md · LICENSE (Apache-2.0) · NOTICE
+├── README.md · LICENSE (AGPL-3.0) · NOTICE
 ├── docs/assets/                screenshots and GIFs used in this README
 ├── Dockerfile · docker-compose.yml · docker-entrypoint.sh
 ├── Sonar/                      QuSonar demo: 2 Python programs + SonarQube export (.xlsx)
@@ -556,30 +557,33 @@ qucore-oss/
 | Token counts say "UTF-8 byte upper bound" | `tiktoken` could not download its vocabulary (offline); estimates are conservative. |
 | Model not found (404) | Pick a model your endpoint serves; the dropdown lists what `GET /v1/models` returns. |
 
-## Roadmap
-
-**Available now:** QuCodRev, QuSonar, QuSolids (with Nebius sandbox demos), QuFlow / UML, QuCoder, QuBot, QuScan,
-change history, cost dashboard, Credentials, guided tours.
-
-**Coming soon:**
-
-- [ ] **QuTest** — Nemotron writes pytest suites for your Python files and runs them in the Nebius sandbox, with Fix with AI.
-- [ ] **Pull-request integration** — review a GitHub / GitLab PR and post findings as review comments.
-- [ ] **Quality-gate re-check** — re-run the SonarQube export after QuSonar fixes and show the gate status.
-- [ ] **Team rules packs** — share QuCodRev prompts and QuSolids focus areas across a team.
-- [ ] **More sandbox languages** — Java, Go and Rust demos in the Nebius sandbox.
-- [ ] **IDE extensions** — VS Code and JetBrains panels on the same backend.
-- [ ] **Enterprise edition** — SSO and bring-your-own-key for Azure / AWS / GCP model endpoints.
-
 ## Contributing
 
 Issues and pull requests are welcome. Please keep secrets out of commits (`backend/.env` is git-ignored).
 
+## Copyright, intellectual property and enterprise
+
+**Copyright © 2026 That AI Company. All intellectual property in QuCoRe — the source code, design, name and logo —
+belongs to That AI Company.**
+
+- **Open-source edition:** this code is published under the [GNU Affero General Public License v3.0](LICENSE)
+  (AGPL-3.0-only). You may use, study, modify and share it, but **any modified version — including one offered to
+  users as a website or service — must be released under the AGPL-3.0 with its complete source code** (section 13).
+  It cannot be turned into a closed product. Keep the copyright notices, [LICENSE](LICENSE) and [NOTICE](NOTICE).
+- **Name and logo:** the license does not grant rights to the **QuCoRe** name or logo, or the That AI Company name
+  (additional term under AGPL-3.0 section 7(e)). Forks must use a different name.
+- **Commercial licenses:** to use QuCoRe without the AGPL-3.0 obligations, a commercial license is available only
+  from That AI Company.
+- **Enterprise and hosted versions** (SSO, private deployment, support, custom integrations) are separate offerings
+  and must be arranged directly with That AI Company. To get in touch, **tag us on GitHub** (open an issue in this
+  repository) or reach out on the **Nebius community forum**.
+- **A contact and interest form will be provided soon.** <!-- add the form link here when it is ready -->
+
 ## License
 
-**[Apache License 2.0](LICENSE)** — Copyright 2026 ThatAICompany. NVIDIA, Nemotron, Nebius, Tavily, SonarQube and
+**[GNU Affero General Public License v3.0](LICENSE)** (AGPL-3.0-only) — Copyright © 2026 That AI Company. The license grants no rights to the QuCoRe name or logo. NVIDIA, Nemotron, Nebius, Tavily, SonarQube and
 other names are trademarks of their respective owners, used only to describe what QuCoRe works with.
 
 <div align="center">
-<sub>Built by ThatAICompany under the leadership of Akshay M for the Nebius × NVIDIA Global AI Hackathon · Powered by Nebius, NVIDIA and Tavily.</sub>
+<sub>© 2026 That AI Company · Built by That AI Company under the leadership of Akshay M for the Nebius × NVIDIA Global AI Hackathon · Powered by Nebius, NVIDIA and Tavily.</sub>
 </div>
