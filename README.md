@@ -5,6 +5,7 @@
 # QuCoRe · Quick Code Review
 
 ### A suite of code review and development tools, powered by Nebius.
+
 **QuCoRe uses Nebius models (NVIDIA Nemotron on Token Factory), the Nebius sandbox and Tavily to review, design, fix
 and secure your code — and to help you create production-grade code files.**
 
@@ -19,7 +20,7 @@ and secure your code — and to help you create production-grade code files.**
 [**Live demo**](#hosted-demo) · [**Install locally**](#quick-start-local) · [**Run in Docker**](#quick-start-docker) · [**Hosted vs open source**](#hosted-edition-vs-this-open-source-edition) ·
 [**Try it in 5 minutes**](#try-it-in-5-minutes) · [**Nemotron & Nebius**](#how-nvidia-nemotron-is-used)
 
-**🌐 Live demo:** `https://<your-demo-url>` &nbsp;·&nbsp; **🎬 Demo video:** [https://www.youtube.com/watch?v=<VIDEO_ID>](https://www.youtube.com/watch?v=<VIDEO_ID>) <!-- replace <VIDEO_ID> with the YouTube demo video -->
+**🌐 Live demo:** [qucore.dev](https://qucore.dev) &nbsp;·&nbsp; **🎬 Demo video:** [https://www.youtube.com/watch?v=<VIDEO_ID>](https://www.youtube.com/watch?v=<VIDEO_ID>) <!-- replace <VIDEO_ID> with the YouTube demo video -->
 
 Built by **That AI Company** under the leadership of **Akshay M** for the **Nebius × NVIDIA Global AI Hackathon**.
 Powered by **Nebius**, **NVIDIA** and **Tavily**.
@@ -48,15 +49,15 @@ SonarQube quality gate fixed, dependencies free of known CVEs, and explained to 
 QuCoRe is that tool — one open-source app, on open NVIDIA Nemotron models, where **you bring your own Nebius key**:
 no seats, no credit packs, you pay Nebius Token Factory prices directly and see every cent in the dashboard.
 
-| You want to… | QuCoRe tool |
-|---|---|
-| Review code against **your own** checklist and get a PDF report | **QuCodRev** — custom-prompt review |
+| You want to…                                                                         | QuCoRe tool                                                                   |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------- |
+| Review code against **your own** checklist and get a PDF report                      | **QuCodRev** — custom-prompt review                                           |
 | Check **SOLID, OOP, design patterns, HLD and LLD**, with scores and the fixed design | **QuSolids** — engineering-principles review, demos run in the Nebius sandbox |
-| Get **flow diagrams, HLD and UML** of an unfamiliar codebase | **QuFlow** — flow maps and UML (Mermaid or React Flow) |
-| **Pass the SonarQube quality gate** without hand-fixing hundreds of issues | **QuSonar** — upload the export, get every issue explained and fixed |
-| **Ask questions** about the codebase and get answers with file + line citations | **QuBot** — code Q&A, hybrid RAG and Merkle-synced retrieval |
-| **Write the change** you asked for, as a reviewable diff | **QuCoder** — chat coder: diff, apply, revert |
-| Know which **dependencies have CVEs** or were compromised, and the safe version | **QuScan** — dependency threat intelligence with Tavily |
+| Get **flow diagrams, HLD and UML** of an unfamiliar codebase                         | **QuFlow** — flow maps and UML (Mermaid or React Flow)                        |
+| **Pass the SonarQube quality gate** without hand-fixing hundreds of issues           | **QuSonar** — upload the export, get every issue explained and fixed          |
+| **Ask questions** about the codebase and get answers with file + line citations      | **QuBot** — code Q&A, hybrid RAG and Merkle-synced retrieval                  |
+| **Write the change** you asked for, as a reviewable diff                             | **QuCoder** — chat coder: diff, apply, revert                                 |
+| Know which **dependencies have CVEs** or were compromised, and the safe version      | **QuScan** — dependency threat intelligence with Tavily                       |
 
 Every code change goes to a **change history** where you review the diff and apply or revert it. Every run is priced
 in the **cost & token dashboard**.
@@ -101,30 +102,30 @@ locally (SQLite, ChromaDB, files), and can delete its local files automatically 
 token budgets and costs. Findings are validated against the real files; CVE ids not present in the evidence are
 dropped; diagram syntax is generated deterministically from validated JSON.
 
-| | General AI coding assistants | Static analysers | AI pull-request reviewers | **QuCoRe** |
-|---|---|---|---|---|
-| Main job | Write code in the editor | Detect rule violations | Comment on pull requests | **Review, design, fix and secure the whole codebase** |
-| SOLID / OOP / HLD / LLD review with scores | — | — | partial | **Yes (QuSolids)** |
-| Explain *and fix* SonarQube issues from an export | — | detects them | — | **Yes (QuSonar)** |
-| Flow maps and UML from code | — | — | — | **Yes (QuFlow)** |
-| Code Q&A with file + line citations | chat | — | — | **Yes (QuBot)** |
-| Dependency CVE + threat news with safe versions | — | some | — | **Yes (QuScan)** |
-| Open source, self-hosted, bring your own key | varies | varies | varies | **Yes (AGPL-3.0, Nebius + Tavily keys)** |
+|                                                   | General AI coding assistants | Static analysers       | AI pull-request reviewers | **QuCoRe**                                            |
+| ------------------------------------------------- | ---------------------------- | ---------------------- | ------------------------- | ----------------------------------------------------- |
+| Main job                                          | Write code in the editor     | Detect rule violations | Comment on pull requests  | **Review, design, fix and secure the whole codebase** |
+| SOLID / OOP / HLD / LLD review with scores        | —                            | —                      | partial                   | **Yes (QuSolids)**                                    |
+| Explain _and fix_ SonarQube issues from an export | —                            | detects them           | —                         | **Yes (QuSonar)**                                     |
+| Flow maps and UML from code                       | —                            | —                      | —                         | **Yes (QuFlow)**                                      |
+| Code Q&A with file + line citations               | chat                         | —                      | —                         | **Yes (QuBot)**                                       |
+| Dependency CVE + threat news with safe versions   | —                            | some                   | —                         | **Yes (QuScan)**                                      |
+| Open source, self-hosted, bring your own key      | varies                       | varies                 | varies                    | **Yes (AGPL-3.0, Nebius + Tavily keys)**              |
 
-*Categories, not specific products; capabilities of individual products vary and change. QuCoRe is complementary to
-your editor assistant — use both.*
+_Categories, not specific products; capabilities of individual products vary and change. QuCoRe is complementary to
+your editor assistant — use both._
 
 ---
 
 ## Screenshots
 
-| QuSonar — SonarQube export matched to the code | QuCodRev — token and cost plan before any call |
-|---|---|
-| <img src="docs/assets/qusonar.gif" alt="QuSonar" /> | <img src="docs/assets/qucodrev.gif" alt="QuCodRev" /> |
-| **QuSolids — SOLID / OOP / HLD / LLD focus areas** | **QuCoder — describe a change, review the diff** |
-| <img src="docs/assets/qusolids.gif" alt="QuSolids" /> | <img src="docs/assets/qucoder.png" alt="QuCoder" /> |
-| **QuBot — ask the codebase** | **Credentials — bring your own Nebius and Tavily keys** |
-| <img src="docs/assets/qubot.png" alt="QuBot" /> | <img src="docs/assets/credentials.gif" alt="Credentials" /> |
+| QuSonar — SonarQube export matched to the code        | QuCodRev — token and cost plan before any call              |
+| ----------------------------------------------------- | ----------------------------------------------------------- |
+| <img src="docs/assets/qusonar.gif" alt="QuSonar" />   | <img src="docs/assets/qucodrev.gif" alt="QuCodRev" />       |
+| **QuSolids — SOLID / OOP / HLD / LLD focus areas**    | **QuCoder — describe a change, review the diff**            |
+| <img src="docs/assets/qusolids.gif" alt="QuSolids" /> | <img src="docs/assets/qucoder.png" alt="QuCoder" />         |
+| **QuBot — ask the codebase**                          | **Credentials — bring your own Nebius and Tavily keys**     |
+| <img src="docs/assets/qubot.png" alt="QuBot" />       | <img src="docs/assets/credentials.gif" alt="Credentials" /> |
 
 <sub>Recorded from the real UI. Model output is shown in the demo video: [YouTube](https://www.youtube.com/watch?v=<VIDEO_ID>).</sub>
 
@@ -132,24 +133,24 @@ your editor assistant — use both.*
 
 ## Hosted demo
 
-**Demo URL: `https://<your-demo-url>`** <!-- replace with the public hosted URL -->
+**Demo URL: [https://qucore.dev](https://qucore.dev)**
 
 The public demo runs the **hosted edition** of QuCoRe, built on this open-source core. Every tool, model call and
 sandbox run is the same; what changes is sign-in and where data is stored.
 
 ### Hosted edition vs this open-source edition
 
-| | **Open-source edition (this repository)** | **Hosted edition (live demo)** |
-|---|---|---|
-| **Who uses it** | One person, on their own computer or server | Many people on one public website |
-| **Login** | **None** — download, run, and the app opens straight to the home page | **Sign in with Google or GitHub**, or **Use as Guest** for a quick look; every person's data is private to them |
-| **API keys** | Your own Nebius / Tavily keys in `backend/.env` (or the Credentials screen) | Shared demo keys with **daily run limits**, or **bring your own key** per person (stored encrypted) |
-| **Database** | **SQLite** file — `backend/data/qucore.db` | **Cloud PostgreSQL** (Supabase) |
-| **Reports, analyses, change history** | **Local files** in `backend/data/` | **Cloud object storage** (Supabase Storage, private bucket) |
-| **QuBot vector index** | **ChromaDB**, local folder `backend/data/chroma` | **Qdrant Cloud** |
-| **Opening code** | Type a folder path or press **Browse**, or import a public GitHub repo | Upload a folder from your browser, or import a public GitHub repo |
-| **Data deletion** | Optional: `QUCORE_AUTO_DELETE` after N days | Automatic after a set number of hours; guest data when the guest leaves |
-| **Internet needed for** | Nebius Token Factory, Nebius sandbox, Tavily (and GitHub imports) | The same, plus the cloud database, storage and vector services |
+|                                       | **Open-source edition (this repository)**                                   | **Hosted edition (live demo)**                                                                                  |
+| ------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Who uses it**                       | One person, on their own computer or server                                 | Many people on one public website                                                                               |
+| **Login**                             | **None** — download, run, and the app opens straight to the home page       | **Sign in with Google or GitHub**, or **Use as Guest** for a quick look; every person's data is private to them |
+| **API keys**                          | Your own Nebius / Tavily keys in `backend/.env` (or the Credentials screen) | Shared demo keys with **daily run limits**, or **bring your own key** per person (stored encrypted)             |
+| **Database**                          | **SQLite** file — `backend/data/qucore.db`                                  | **Cloud PostgreSQL** (Supabase)                                                                                 |
+| **Reports, analyses, change history** | **Local files** in `backend/data/`                                          | **Cloud object storage** (Supabase Storage, private bucket)                                                     |
+| **QuBot vector index**                | **ChromaDB**, local folder `backend/data/chroma`                            | **Qdrant Cloud**                                                                                                |
+| **Opening code**                      | Type a folder path or press **Browse**, or import a public GitHub repo      | Upload a folder from your browser, or import a public GitHub repo                                               |
+| **Data deletion**                     | Optional: `QUCORE_AUTO_DELETE` after N days                                 | Automatic after a set number of hours; guest data when the guest leaves                                         |
+| **Internet needed for**               | Nebius Token Factory, Nebius sandbox, Tavily (and GitHub imports)           | The same, plus the cloud database, storage and vector services                                                  |
 
 Nothing in this edition needs a cloud database or an account: your code, reports and index stay on your machine and
 only go to Nebius (and Tavily for package names) when you run a tool.
@@ -179,12 +180,12 @@ proposed designs in the Nebius sandbox.
 Every review, fix, diagram, answer and threat analysis is generated by **NVIDIA Nemotron** open models through
 Nebius Token Factory (`backend/app/llm.py`, `backend/app/qa_llm.py`).
 
-| Where | Nemotron model (default) | Why |
-|---|---|---|
-| All tools by default: QuCodRev, QuSonar, QuSolids, QuFlow, QuBot, QuCoder, QuScan | `nvidia/Nemotron-3-Ultra-550b-a55b` (`NEBIUS_MODEL`) | Serious reasoning over whole files and long contexts. |
-| Everyday reviews, QuCoder changes | Nemotron 3 **Super** (header switch) | Strong code generation at a lower price per token. |
-| Quick QuBot questions | Nemotron 3 **Nano** (header switch) | Fast, cheap everyday calls keep the app responsive and credits stretching further. |
-| QuBot with screenshots | `nvidia/Nemotron-3-Nano-Omni` (header switch) | Vision: images attached to a question. |
+| Where                                                                             | Nemotron model (default)                             | Why                                                                                |
+| --------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| All tools by default: QuCodRev, QuSonar, QuSolids, QuFlow, QuBot, QuCoder, QuScan | `nvidia/Nemotron-3-Ultra-550b-a55b` (`NEBIUS_MODEL`) | Serious reasoning over whole files and long contexts.                              |
+| Everyday reviews, QuCoder changes                                                 | Nemotron 3 **Super** (header switch)                 | Strong code generation at a lower price per token.                                 |
+| Quick QuBot questions                                                             | Nemotron 3 **Nano** (header switch)                  | Fast, cheap everyday calls keep the app responsive and credits stretching further. |
+| QuBot with screenshots                                                            | `nvidia/Nemotron-3-Nano-Omni` (header switch)        | Vision: images attached to a question.                                             |
 
 - **Pick the model per task** from the header switch: Nano for quick questions, Super for everyday reviews and changes,
   Ultra for design reviews and large codebases. Any model ID your endpoint serves can be typed in (Credentials).
@@ -196,7 +197,7 @@ Nebius Token Factory (`backend/app/llm.py`, `backend/app/qa_llm.py`).
 - **One OpenAI-compatible endpoint for everything:** chat, streaming and embeddings through the standard OpenAI SDK with
   `base_url = NEBIUS_BASE_URL` — one client, one key, one error path. Moving between Nano, Super and Ultra is a model-ID
   change, not a new integration.
-- **Embeddings on the same key:** `Qwen/Qwen3-Embedding-8B` (default; any Token Factory embedding model works) powers
+- **Embeddings on the same key:** `Qwen/Qwen3-Embedding-8B` (fixed, the same for everyone) powers
   QuBot retrieval over a local ChromaDB index and QuCodRev's semantic file ordering.
 - **Live model catalogue:** the backend reads `GET /v1/models` and fills the dropdowns with the exact IDs your endpoint
   serves, correcting letter case before each call.
@@ -219,7 +220,7 @@ ContreeSync().images.oci("node:22-slim").run("node", args=["-e", code]).wait()  
 **QuSolids (Python and JavaScript / TypeScript file testing):**
 
 1. Tick **Run proposed code in the sandbox** before a QuSolids review. For findings in **Python** files Nemotron returns
-   a complete, standard-library **Python demonstration** with dummy data that builds the *old* and the *new* design
+   a complete, standard-library **Python demonstration** with dummy data that builds the _old_ and the _new_ design
    side by side and prints why the new one is better. The backend checks that it compiles before showing it.
 2. Findings in **JavaScript / TypeScript** files (`.js .jsx .ts .tsx`, React components and hooks included) get a
    **Node.js demonstration** on request (**Write a demo**): plain JavaScript that models the components and hooks as
@@ -253,17 +254,17 @@ manager.
 Every tool follows the same pattern: **read the code exactly → plan the tokens → call Nemotron → validate the answer
 in code → save a report or a reviewable change.**
 
-| Tool | How it works | Main files |
-|---|---|---|
-| Workspace | Opens a local folder or a public GitHub commit; skips dependencies, binaries and secret files (`.env`, keys are never sent to a model). | `workspace.py`, `github_import.py` |
-| QuCodRev | Counts tokens locally, packs whole files into batches that fit the context window, optionally orders them with Nebius embeddings, sends each batch to Nemotron, normalises the Markdown and renders a PDF (ReportLab). | `review_pipeline.py`, `llm.py`, `pdf_report.py` |
-| QuSonar | Parses the SonarQube export (xlsx / csv / json), matches report paths to files by longest path suffix, sends each file with all its issues, returns explanations and fixed code; fixes go to the change history. | `sonar.py`, `analysis_api.py` |
-| QuSolids | Computes structure metrics, the import graph and circular dependencies in code; Nemotron returns JSON findings (principle, location, before/after code, optional demo), validated against the files and scored by the backend; demos run in the Nebius sandbox. | `solidify.py`, `solid_metrics.py`, `sandbox.py` |
-| QuFlow / UML | Nemotron returns a small JSON graph; the backend validates it and the browser renders Mermaid or React Flow. | `flowmap.py`, `uml.py` |
-| QuCoder | Streams an answer with SEARCH / REPLACE edit blocks, applies them in memory, shows a Monaco diff; you apply or revert. | `qucoder.py`, `changes.py` |
-| QuBot | Syntax-aware chunks, Nebius embeddings in local ChromaDB synced with a Merkle tree, BM25 keyword search, 60/40 hybrid fusion, streamed answers with citations. | `qa_chunker.py`, `qa_index.py`, `qa_pipeline.py` |
-| QuScan | Finds every dependency, gathers evidence with Tavily, Nemotron extracts fixed versions with citations, the backend checks version ranges. | `quscan*.py` |
-| Dashboard | Every run's tokens × live Nebius prices, stored in SQLite. | `dashboard.py`, `pricing.py` |
+| Tool         | How it works                                                                                                                                                                                                                                                    | Main files                                       |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| Workspace    | Opens a local folder or a public GitHub commit; skips dependencies, binaries and secret files (`.env`, keys are never sent to a model).                                                                                                                         | `workspace.py`, `github_import.py`               |
+| QuCodRev     | Counts tokens locally, packs whole files into batches that fit the context window, optionally orders them with Nebius embeddings, sends each batch to Nemotron, normalises the Markdown and renders a PDF (ReportLab).                                          | `review_pipeline.py`, `llm.py`, `pdf_report.py`  |
+| QuSonar      | Parses the SonarQube export (xlsx / csv / json), matches report paths to files by longest path suffix, sends each file with all its issues, returns explanations and fixed code; fixes go to the change history.                                                | `sonar.py`, `analysis_api.py`                    |
+| QuSolids     | Computes structure metrics, the import graph and circular dependencies in code; Nemotron returns JSON findings (principle, location, before/after code, optional demo), validated against the files and scored by the backend; demos run in the Nebius sandbox. | `solidify.py`, `solid_metrics.py`, `sandbox.py`  |
+| QuFlow / UML | Nemotron returns a small JSON graph; the backend validates it and the browser renders Mermaid or React Flow.                                                                                                                                                    | `flowmap.py`, `uml.py`                           |
+| QuCoder      | Streams an answer with SEARCH / REPLACE edit blocks, applies them in memory, shows a Monaco diff; you apply or revert.                                                                                                                                          | `qucoder.py`, `changes.py`                       |
+| QuBot        | Syntax-aware chunks, Nebius embeddings in local ChromaDB synced with a Merkle tree, BM25 keyword search, 60/40 hybrid fusion, streamed answers with citations.                                                                                                  | `qa_chunker.py`, `qa_index.py`, `qa_pipeline.py` |
+| QuScan       | Finds every dependency, gathers evidence with Tavily, Nemotron extracts fixed versions with citations, the backend checks version ranges.                                                                                                                       | `quscan*.py`                                     |
+| Dashboard    | Every run's tokens × live Nebius prices, stored in SQLite.                                                                                                                                                                                                      | `dashboard.py`, `pricing.py`                     |
 
 ## Architecture
 
@@ -290,20 +291,20 @@ flowchart LR
 
 ### What you need
 
-| | Version | Check |
-|---|---|---|
-| **Python** | 3.11 or newer | `python --version` (Windows) / `python3 --version` (macOS, Linux) |
-| **Node.js** | 20.19 or newer (includes npm) | `node --version` |
-| **Git** | any | `git --version` |
-| **Nebius Token Factory API key** | — | <https://tokenfactory.nebius.com> |
-| Nebius project ID *(optional, sandbox)* · Tavily key *(optional, QuScan)* | — | Nebius console · <https://tavily.com> |
+|                                                                           | Version                       | Check                                                             |
+| ------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------------------------- |
+| **Python**                                                                | 3.11 or newer                 | `python --version` (Windows) / `python3 --version` (macOS, Linux) |
+| **Node.js**                                                               | 20.19 or newer (includes npm) | `node --version`                                                  |
+| **Git**                                                                   | any                           | `git --version`                                                   |
+| **Nebius Token Factory API key**                                          | —                             | <https://tokenfactory.nebius.com>                                 |
+| Nebius project ID _(optional, sandbox)_ · Tavily key _(optional, QuScan)_ | —                             | Nebius console · <https://tavily.com>                             |
 
 ### Step by step
 
 **Step 1 — Download the code**
 
 ```bash
-git clone https://github.com/<your-org>/qucore-nebius-oss.git
+git clone https://github.com/TCAI-01/qucore-nebius-oss.git
 cd qucore-nebius-oss
 ```
 
@@ -382,15 +383,15 @@ cp backend/.env.example backend/.env       # Windows: copy backend\.env.example 
 
 Open `backend/.env` in any editor and fill in the values (keep the single quotes). Only the first one is required:
 
-| Key | Required? | Where to get it |
-|---|---|---|
-| `NEBIUS_API_KEY` | **Yes** | <https://tokenfactory.nebius.com> → API keys → create key |
-| `NEBIUS_BASE_URL` | pre-filled | Keep the default unless your Token Factory endpoint differs (must end in `/v1`). |
-| `NEBIUS_MODEL` | pre-filled | Default `nvidia/Nemotron-3-Ultra-550b-a55b`; the header switch changes it per run. |
-| `NEBIUS_PROJECT_ID` | For sandbox demos | Nebius console → your project → project ID (`project-…`). Needed for QuSolids **Run in sandbox**. |
-| `QUCORE_SANDBOX_IMAGE`, `QUCORE_SANDBOX_NODE_IMAGE` | Optional | Defaults `python:3.12`, `node:22-slim`; put your own image name to add packages. |
-| `TAVILY_API_KEY` | For QuScan | <https://tavily.com> → dashboard → API key. |
-| `QUCORE_GITHUB_TOKEN` | Optional | A GitHub token raises the rate limit for public-repo imports. |
+| Key                                                 | Required?         | Where to get it                                                                                   |
+| --------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------- |
+| `NEBIUS_API_KEY`                                    | **Yes**           | <https://tokenfactory.nebius.com> → API keys → create key                                         |
+| `NEBIUS_BASE_URL`                                   | pre-filled        | Keep the default unless your Token Factory endpoint differs (must end in `/v1`).                  |
+| `NEBIUS_MODEL`                                      | pre-filled        | Default `nvidia/Nemotron-3-Ultra-550b-a55b`; the header switch changes it per run.                |
+| `NEBIUS_PROJECT_ID`                                 | For sandbox demos | Nebius console → your project → project ID (`project-…`). Needed for QuSolids **Run in sandbox**. |
+| `QUCORE_SANDBOX_IMAGE`, `QUCORE_SANDBOX_NODE_IMAGE` | Optional          | Defaults `python:3.12`, `node:22-slim`; put your own image name to add packages.                  |
+| `TAVILY_API_KEY`                                    | For QuScan        | <https://tavily.com> → dashboard → API key.                                                       |
+| `QUCORE_GITHUB_TOKEN`                               | Optional          | A GitHub token raises the rate limit for public-repo imports.                                     |
 
 Minimal example:
 
@@ -412,7 +413,7 @@ No Python or Node.js needed — only **Docker** (Docker Desktop on Windows / mac
 **Step 1 — Download the code**
 
 ```bash
-git clone https://github.com/<your-org>/qucore-nebius-oss.git
+git clone https://github.com/TCAI-01/qucore-nebius-oss.git
 cd qucore-nebius-oss
 ```
 
@@ -465,10 +466,10 @@ The same Docker image runs on any server or container platform (one container, 2
 **A. Pass a SonarQube quality gate (QuSonar).** The `Sonar/` folder has two small, generic Python programs and a
 matching SonarQube export:
 
-| File | What it is |
-|---|---|
-| `Sonar/inventory_service.py` | In-memory inventory service (products, stock movements, reorder list). `python Sonar/inventory_service.py` |
-| `Sonar/sales_report.py` | CSV sales summariser (totals by region and month, best sellers). `python Sonar/sales_report.py` |
+| File                                    | What it is                                                                                                                                                    |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Sonar/inventory_service.py`            | In-memory inventory service (products, stock movements, reorder list). `python Sonar/inventory_service.py`                                                    |
+| `Sonar/sales_report.py`                 | CSV sales summariser (totals by region and month, best sellers). `python Sonar/sales_report.py`                                                               |
 | `Sonar/sonarqube_simulated_issues.xlsx` | 20 simulated issues (10 per file: S107, S1172, S1481, S1854, S1871, S1192, S3776, S3984, S1764, S4143), paths written as `\Sonar\<file>`, exact line numbers. |
 
 Open the `Sonar` folder (or the repository root) in **QuReview → QuSonar**, upload the `.xlsx` — paths are matched
@@ -485,24 +486,24 @@ demos) → QuScan (dependency CVEs). Each tool's guided tour starts the first ti
 All settings live in **`backend/.env`** ([`backend/.env.example`](backend/.env.example) documents every key). The
 **Credentials** screen edits the file **in place**: only changed values are rewritten; comments and order are kept.
 
-| Key | Purpose |
-|---|---|
-| `NEBIUS_BASE_URL`, `NEBIUS_API_KEY` | **Bring your own Nebius key** — Token Factory endpoint and key. |
-| `NEBIUS_MODEL` | Main model (default `nvidia/Nemotron-3-Ultra-550b-a55b`); any served model ID works. |
-| `NEBIUS_EMBEDDING_MODEL` | Embeddings (default `Qwen/Qwen3-Embedding-8B`); empty = keyword search only. |
-| `NEBIUS_CONTEXT_WINDOW`, `NEBIUS_MAX_OUTPUT_TOKENS` | Token limits of the chosen model. |
-| `NEBIUS_PROJECT_ID` | Nebius project for the sandbox (QuSolids demos). |
-| `QUCORE_SANDBOX_IMAGE`, `QUCORE_SANDBOX_NODE_IMAGE` | Sandbox images (default `python:3.12`, `node:22-slim`); any OCI image name, e.g. your own. |
-| `TAVILY_API_KEY` | **Bring your own Tavily key** for QuScan (also in Credentials → Tavily web search). |
-| `QUCORE_QA_HISTORY_TURNS` | Previous QuBot answers sent with "Include history" (default 5). |
-| `QUCORE_AUTO_DELETE`, `QUCORE_AUTO_DELETE_DAYS` | Automatic deletion of local files. |
-| `QUCORE_LIVE_PRICING`, `QUCORE_PRICING_REFRESH_HOURS` | Live Nebius prices from the LiteLLM catalogue. |
-| `QUCORE_TABS`, `QUCORE_SAMPLE_REPOS` | Which of the 4 tabs to show; sample repositories on the home page. |
+| Key                                                   | Purpose                                                                                    |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `NEBIUS_BASE_URL`, `NEBIUS_API_KEY`                   | **Bring your own Nebius key** — Token Factory endpoint and key.                            |
+| `NEBIUS_MODEL`                                        | Main model (default `nvidia/Nemotron-3-Ultra-550b-a55b`); any served model ID works.       |
+| `NEBIUS_EMBEDDING_MODEL`                              | Embeddings: always `Qwen/Qwen3-Embedding-8B` (fixed; other values are ignored).            |
+| `NEBIUS_CONTEXT_WINDOW`, `NEBIUS_MAX_OUTPUT_TOKENS`   | Token limits of the chosen model.                                                          |
+| `NEBIUS_PROJECT_ID`                                   | Nebius project for the sandbox (QuSolids demos).                                           |
+| `QUCORE_SANDBOX_IMAGE`, `QUCORE_SANDBOX_NODE_IMAGE`   | Sandbox images (default `python:3.12`, `node:22-slim`); any OCI image name, e.g. your own. |
+| `TAVILY_API_KEY`                                      | **Bring your own Tavily key** for QuScan (also in Credentials → Tavily web search).        |
+| `QUCORE_QA_HISTORY_TURNS`                             | Previous QuBot answers sent with "Include history" (default 5).                            |
+| `QUCORE_AUTO_DELETE`, `QUCORE_AUTO_DELETE_DAYS`       | Automatic deletion of local files.                                                         |
+| `QUCORE_LIVE_PRICING`, `QUCORE_PRICING_REFRESH_HOURS` | Live Nebius prices from the LiteLLM catalogue.                                             |
+| `QUCORE_TABS`, `QUCORE_SAMPLE_REPOS`                  | Which of the 4 tabs to show; sample repositories on the home page.                         |
 
 ### Credentials screen
 
 The main keys can be set in the app (**Credentials**, in the header) instead of editing the file: **Nebius Token
-Factory** (base URL, API key, model, embedding model, token limits), **Code sandbox** (Nebius project ID) and **Tavily
+Factory** (base URL, API key, model, token limits), **Code sandbox** (Nebius project ID) and **Tavily
 web search**. Saving writes `backend/.env` in place; keys are shown masked and never sent back to the browser.
 The sandbox images are set in `backend/.env` (use your own image if your demos need extra packages):
 
@@ -530,7 +531,7 @@ QUCORE_SANDBOX_NODE_IMAGE='node:22-slim'
 ## Project structure
 
 ```
-qucore-oss/
+qucore-nebius-oss/
 ├── README.md · LICENSE (AGPL-3.0) · NOTICE
 ├── docs/assets/                screenshots and GIFs used in this README
 ├── Dockerfile · docker-compose.yml · docker-entrypoint.sh
@@ -546,16 +547,16 @@ qucore-oss/
 
 ## Troubleshooting
 
-| Problem | Fix |
-|---|---|
-| "Set the Nebius base URL and API key in Credentials." | Add `NEBIUS_API_KEY` in Credentials or `backend/.env`. |
-| Sandbox: "Add the Nebius API key and Nebius project ID…" | Set `NEBIUS_PROJECT_ID` (Credentials → Code sandbox). |
-| QuScan cannot search | Add your Tavily key (Credentials → Tavily web search). |
-| `npm run build` runs out of memory | `NODE_OPTIONS=--max-old-space-size=6144 npm run build` (PowerShell: `$env:NODE_OPTIONS="--max-old-space-size=6144"`). |
-| **Browse** says no desktop / no tkinter | Paste the absolute folder path instead. |
-| "QuCoRe accepts requests from its local UI only." | Open the app at an origin listed in `QUCORE_ALLOWED_ORIGINS`. |
-| Token counts say "UTF-8 byte upper bound" | `tiktoken` could not download its vocabulary (offline); estimates are conservative. |
-| Model not found (404) | Pick a model your endpoint serves; the dropdown lists what `GET /v1/models` returns. |
+| Problem                                                  | Fix                                                                                                                   |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| "Set the Nebius base URL and API key in Credentials."    | Add `NEBIUS_API_KEY` in Credentials or `backend/.env`.                                                                |
+| Sandbox: "Add the Nebius API key and Nebius project ID…" | Set `NEBIUS_PROJECT_ID` (Credentials → Code sandbox).                                                                 |
+| QuScan cannot search                                     | Add your Tavily key (Credentials → Tavily web search).                                                                |
+| `npm run build` runs out of memory                       | `NODE_OPTIONS=--max-old-space-size=6144 npm run build` (PowerShell: `$env:NODE_OPTIONS="--max-old-space-size=6144"`). |
+| **Browse** says no desktop / no tkinter                  | Paste the absolute folder path instead.                                                                               |
+| "QuCoRe accepts requests from its local UI only."        | Open the app at an origin listed in `QUCORE_ALLOWED_ORIGINS`.                                                         |
+| Token counts say "UTF-8 byte upper bound"                | `tiktoken` could not download its vocabulary (offline); estimates are conservative.                                   |
+| Model not found (404)                                    | Pick a model your endpoint serves; the dropdown lists what `GET /v1/models` returns.                                  |
 
 ## Contributing
 
