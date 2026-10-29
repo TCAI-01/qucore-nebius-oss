@@ -1,0 +1,8 @@
+/* Icon badge for tab headings (same size and shape as QuScan's qs-badge). */
+.tab-badge { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 11px;
+  flex-shrink: 0; color: #fff; box-shadow: 0 6px 18px -8px var(--tab-glow); background: var(--tab-fill); }
+.tab-badge-blue { --tab-fill: linear-gradient(135deg, #095499, #3698ef); --tab-glow: rgb(9 84 153 / .7); }
+.tab-badge-violet { --tab-fill: linear-gradient(135deg, #6d28d9, #a78bfa); --tab-glow: rgb(109 40 217 / .7); }
+.tab-badge-teal { --tab-fill: linear-gradient(135deg, #0f766e, #2dd4bf); --tab-glow: rgb(15 118 110 / .7); }
+.tab-badge-sky { --tab-fill: linear-gradient(135deg, #0369a1, #38bdf8); --tab-glow: rgb(3 105 161 / .7); }
+.tab-badge-green { --tab-fill: linear-gradient(135deg, #15803d, #4ade80); --tab-glow: rgb(21 128 61 / .7); }

@@ -1,0 +1,41 @@
+/* Home page (HomePage.jsx). Light and calm: four columns divided by faint lines, slow code drifting up. */
+.home { position: relative; min-height: calc(100vh - 96px); overflow: hidden; display: flex; align-items: center;
+  background: radial-gradient(ellipse at 50% -10%, rgb(56 189 248 / .10), transparent 55%), rgb(var(--ink)); }
+.home-rain { position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent); }
+.home-rain pre { position: absolute; top: 0; margin: 0; font-family: var(--font-mono); font-size: 11px; line-height: 1.6;
+  color: rgb(9 84 153 / .085); white-space: pre; animation: home-rise linear infinite; will-change: transform; }
+@keyframes home-rise { from { transform: translateY(100vh); } to { transform: translateY(-100%); } }
+@media (prefers-reduced-motion: reduce) { .home-rain pre { animation: none; } }
+.home-inner { position: relative; z-index: 1; width: 100%; max-width: 1480px; margin: 0 auto; padding: 36px 24px 40px; }
+.home-head { text-align: center; margin-bottom: 26px; }
+.home-head h1 { font-size: clamp(26px, 3vw, 38px); font-weight: 750; letter-spacing: -.02em; margin-top: 6px; }
+.home-head p:last-child { color: rgb(var(--muted)); margin-top: 6px; font-size: 15px; }
+.home-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+@media (max-width: 1100px) { .home-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+@media (max-width: 640px) { .home-cols { grid-template-columns: 1fr; gap: 14px; } }
+/* Each tool is its own card: own border, rounding, background and shadow. */
+.home-col { --mode: 56 189 248; position: relative; display: flex; flex-direction: column; padding: 28px 24px 24px;
+  border-radius: 22px; overflow: hidden; border: 1px solid rgb(var(--line)); background: rgb(var(--panel) / .92);
+  backdrop-filter: blur(2px); box-shadow: 0 30px 80px -50px rgb(9 84 153 / .45); transition: transform .15s ease, box-shadow .15s ease; }
+.home-col:hover { transform: translateY(-2px); box-shadow: 0 34px 80px -46px rgb(9 84 153 / .55); }
+.home-col::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: rgb(var(--mode)); opacity: .85; }
+.home-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; color: #fff;
+  background: linear-gradient(135deg, rgb(var(--mode)), rgb(var(--mode) / .7)); box-shadow: 0 10px 24px -12px rgb(var(--mode)); }
+.home-col h2 { font-size: 21px; font-weight: 700; margin-top: 14px; }
+.home-tag { font-size: 13.5px; line-height: 1.5; color: rgb(var(--muted)); margin-top: 4px; min-height: 40px; }
+.home-steps { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.home-steps li { display: flex; gap: 11px; align-items: flex-start; }
+.home-steps li > span > b { display: block; font-size: 13px; }
+.home-steps li > span > span { display: block; font-size: 12.5px; line-height: 1.5; color: rgb(var(--muted)); margin-top: 1px; }
+.home-num { display: grid; place-items: center; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; color: #fff; background: rgb(var(--mode)); }
+.home-go { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 16px;
+  border-radius: 12px; font-size: 14px; font-weight: 650; color: #fff; background: linear-gradient(135deg, rgb(var(--mode)), rgb(var(--mode) / .8));
+  box-shadow: 0 12px 24px -14px rgb(var(--mode)); transition: transform .15s ease; }
+.home-steps + .home-go { margin-top: 24px; }
+.home-go:hover { transform: translateY(-1px); }
+.home-col { min-height: 100%; }
+.home-col > .home-steps { flex: 1; }
+.home-samples { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 22px; }
+.home-opened { border-color: rgb(var(--added) / .6) !important; color: rgb(var(--added)); }

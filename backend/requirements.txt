@@ -1,0 +1,29 @@
+# Python 3.11+. Install: pip install -r requirements.txt
+fastapi>=0.115.6,<1.0
+uvicorn[standard]>=0.34.0,<1.0
+pydantic>=2.10.4,<3.0
+# Nebius Token Factory (OpenAI-compatible API): NVIDIA Nemotron chat models and embeddings
+openai>=1.68.2,<3.0
+python-dotenv>=1.0.1,<2.0
+reportlab>=4.2.5,<5.0
+
+# Local token estimates and prompt-directed PDF tables
+tiktoken>=0.8.0,<1.0
+markdown-it-py>=3.0.0,<5.0
+
+# SonarQube .xlsx report import (QuSonar)
+openpyxl>=3.1.2,<4.0
+
+# QuBot: local vector database for Hybrid RAG and Cursor-style retrieval
+chromadb>=0.5.23,<2.0
+
+# Nebius sandbox (QuSolids demos): runs code remotely, never on this computer
+contree-sdk>=0.3.0
+
+opentelemetry-sdk>=1.45.0
+
+# QuScan: dependency threat intelligence
+tavily-python>=0.7
+packaging>=23
+
+tomli>=2.0; python_version < "3.11"

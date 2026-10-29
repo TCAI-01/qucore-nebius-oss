@@ -1,0 +1,12 @@
+/* Scoped to the optional renderer; Mermaid keeps its existing styles. */
+.qucore-rf-viewport { background-image: none; }
+.qucore-rf .react-flow { width: 100%; height: 100%; }
+.qucore-rf .react-flow__node-qucoreStep { cursor: pointer; border: 0; background: transparent; }
+.qucore-rf .react-flow__node-qucoreBoundary { pointer-events: none; border: 0; background: transparent; }
+.qucore-rf .react-flow__handle { opacity: 0; width: 1px; height: 1px; border: 0; min-width: 0; min-height: 0; pointer-events: none; }
+.qucore-rf-step { position: relative; transition: opacity .15s; }
+.qucore-rf-step.is-focused { filter: drop-shadow(0 0 4px rgb(54 152 239 / .65)); }
+.qucore-rf-step.is-picked, .qucore-rf .react-flow__node-qucoreStep:focus-visible { filter: drop-shadow(0 0 5px rgb(54 152 239 / .9)); outline: none; }
+.qucore-rf .flow-overlay { z-index: 12; }
+.qucore-rf .flow-status { z-index: 10; }
+.qucore-rf .flow-hint { z-index: 5; max-width: calc(100% - 120px); }

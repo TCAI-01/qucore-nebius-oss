@@ -1,0 +1,19 @@
+# QuCoRe OSS with Docker:
+#   cp backend/.env.example backend/.env    (add NEBIUS_API_KEY, NEBIUS_PROJECT_ID, TAVILY_API_KEY)
+#   docker compose up --build
+#   open http://localhost:8000
+services:
+  qucore:
+    build: .
+    image: qucore-oss:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      # Your configuration (the Credentials screen edits this file in place)
+      - ./backend/.env:/app/backend/.env
+      # Local storage: SQLite, ChromaDB, reports, change history (QUCORE_AUTO_DELETE can clear it)
+      - ./backend/data:/app/backend/data
+      # The code you want to review: open /workspace in the app ("Absolute path" box).
+      # Default: the QuSonar demo folder. Point CODE_DIR at your own project: CODE_DIR=/path/to/project docker compose up
+      - ${CODE_DIR:-./Sonar}:/workspace
+    restart: unless-stopped

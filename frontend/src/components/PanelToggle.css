@@ -1,0 +1,27 @@
+/* Collapsible side panels (PanelToggle.jsx). Only from 1024px up, where the panels sit beside the middle. */
+.qc-edge { display: none; }
+@media (min-width: 1024px) {
+  .qc-edge { position: fixed; top: 50%; z-index: 40; display: grid; place-items: center; width: 18px; height: 56px; transform: translateY(-50%);
+    color: rgb(var(--muted)); background: rgb(var(--panel)); border: 1px solid rgb(var(--line)); opacity: .8;
+    box-shadow: 0 6px 18px -10px rgb(0 0 0 / .35); transition: opacity .15s ease, color .15s ease, width .15s ease, background .15s ease; }
+  .qc-edge:hover, .qc-edge:focus-visible { opacity: 1; color: rgb(var(--fg)); width: 24px; }
+  .qc-edge.off { color: #fff; background: rgb(var(--accent)); border-color: rgb(var(--accent)); opacity: .9; }
+  .qc-edge-left { left: 0; border-left: 0; border-radius: 0 10px 10px 0; }
+  .qc-edge-right { right: 0; border-right: 0; border-radius: 10px 0 0 10px; }
+
+  /* left panel = first <aside class="bg-panel"> of a tab grid; right panel = last one (QuBot) */
+  .qc-hide-left .grid > aside.bg-panel:first-child { display: none !important; }
+  .qc-hide-left .grid:has(> aside.bg-panel:first-child) { grid-template-columns: minmax(0, 1fr) !important; }
+  .qc-hide-left .grid:has(> aside.bg-panel:first-child):has(> aside.bg-panel:last-child:not(:first-child)) { grid-template-columns: minmax(0, 1fr) 300px !important; }
+  .qc-hide-right .grid > aside.bg-panel:last-child:not(:first-child) { display: none !important; }
+  .qc-hide-right .grid:has(> aside.bg-panel:first-child):has(> aside.bg-panel:last-child:not(:first-child)) { grid-template-columns: 280px minmax(0, 1fr) !important; }
+  .qc-hide-left.qc-hide-right .grid:has(> aside.bg-panel:first-child):has(> aside.bg-panel:last-child:not(:first-child)) { grid-template-columns: minmax(0, 1fr) !important; }
+  /* the mode panel of a merged tab (Hackathon.css) */
+  .qc-hide-right .hk-shell { grid-template-columns: minmax(0, 1fr) !important; }
+  .qc-hide-right .hk-rail { display: none !important; }
+}
+@media (min-width: 1280px) {
+  .qc-hide-left .grid:has(> aside.bg-panel:first-child):has(> aside.bg-panel:last-child:not(:first-child)) { grid-template-columns: minmax(0, 1fr) 330px !important; }
+  .qc-hide-right .grid:has(> aside.bg-panel:first-child):has(> aside.bg-panel:last-child:not(:first-child)) { grid-template-columns: 300px minmax(0, 1fr) !important; }
+  .qc-hide-left.qc-hide-right .grid:has(> aside.bg-panel:first-child):has(> aside.bg-panel:last-child:not(:first-child)) { grid-template-columns: minmax(0, 1fr) !important; }
+}

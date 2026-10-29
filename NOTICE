@@ -1,0 +1,11 @@
+QuCoRe OSS (Quick Code Review)
+Copyright 2026 ThatAICompany
+
+This product was built by ThatAICompany under the leadership of Akshay M
+for the Nebius x NVIDIA Global AI Hackathon.
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It uses NVIDIA Nemotron open models served by Nebius Token Factory, the Nebius
+sandbox (contree-sdk) and the Tavily search API. Third-party packages keep their
+own licenses (see backend/requirements.txt and frontend/package.json).
