@@ -10,7 +10,7 @@
 and secure your code — and to help you create production-grade code files.**
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
-[![Demo video: YouTube](https://img.shields.io/badge/Demo%20video-YouTube-red)](https://www.youtube.com/watch?v=<VIDEO_ID>)
+[![Demo video: YouTube](https://img.shields.io/badge/Demo%20video-YouTube-red)](https://www.youtube.com/watch?v=aO1wxGpmUyI)
 ![Models: NVIDIA Nemotron](https://img.shields.io/badge/models-NVIDIA%20Nemotron-76b900)
 ![Inference: Nebius Token Factory](https://img.shields.io/badge/inference-Nebius%20Token%20Factory-38bdf8)
 ![Search: Tavily](https://img.shields.io/badge/search-Tavily-8b5cf6)
@@ -20,7 +20,7 @@ and secure your code — and to help you create production-grade code files.**
 [**Live demo**](#hosted-demo) · [**Install locally**](#quick-start-local) · [**Run in Docker**](#quick-start-docker) · [**Hosted vs open source**](#hosted-edition-vs-this-open-source-edition) ·
 [**Try it in 5 minutes**](#try-it-in-5-minutes) · [**Nemotron & Nebius**](#how-nvidia-nemotron-is-used)
 
-**🌐 Live demo:** [qucore.dev](https://qucore.dev) &nbsp;·&nbsp; **🎬 Demo video:** [https://www.youtube.com/watch?v=<VIDEO_ID>](https://www.youtube.com/watch?v=<VIDEO_ID>) <!-- replace <VIDEO_ID> with the YouTube demo video -->
+**🌐 Live demo:** [qucore.dev](https://qucore.dev) &nbsp;·&nbsp; **🎬 Demo video:** [https://www.youtube.com/watch?v=aO1wxGpmUyI](https://www.youtube.com/watch?v=aO1wxGpmUyI) <!-- replace <VIDEO_ID> with the YouTube demo video -->
 
 Built by **That AI Company** under the leadership of **Akshay M** for the **Nebius × NVIDIA Global AI Hackathon**.
 Powered by **Nebius**, **NVIDIA** and **Tavily**.
@@ -127,7 +127,7 @@ your editor assistant — use both._
 | **QuBot — ask the codebase**                          | **Credentials — bring your own Nebius and Tavily keys**     |
 | <img src="docs/assets/qubot.png" alt="QuBot" />       | <img src="docs/assets/credentials.gif" alt="Credentials" /> |
 
-<sub>Recorded from the real UI. Model output is shown in the demo video: [YouTube](https://www.youtube.com/watch?v=<VIDEO_ID>).</sub>
+<sub>Recorded from the real UI. Model output is shown in the demo video: [YouTube](https://www.youtube.com/watch?v=aO1wxGpmUyI).</sub>
 
 ---
 
